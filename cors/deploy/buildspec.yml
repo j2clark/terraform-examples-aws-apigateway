@@ -17,7 +17,7 @@ phases:
     finally:
       - terraform --version
 #     we only work within code
-      - cd applications/cors/application
+      - cd cors/application
 
   post_build:
     commands:
