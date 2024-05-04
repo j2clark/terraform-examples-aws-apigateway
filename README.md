@@ -9,4 +9,6 @@ Each example consists of a deploy, application, and client directory.
 
 ## Examples
 
+* [Public](public/PUBLIC_EXAMPLE.md)
 * [API Key](apikey/APIKEY_EXAMPLE.md)
+* [CORS](cors/CORS_EXAMPLE.md)
