@@ -17,32 +17,23 @@ phases:
     finally:
       - terraform --version
 #     we only work within code
-      - cd applications/$APPLICATION/application
+      - cd applications/apikey/application
 
   post_build:
     commands:
       - echo post_build
 
       - echo "initialize terraform"
-#      - cd terraform
-
-#      - echo $PROJECT_NAME
-#      - echo $APPLICATION
-#      - echo $GITHUB_REPO
-#      - echo $BRANCH
       - echo $ARTIFACTS
       - echo $NAME_PREFIX
 
-#      - terraform init -backend-config="bucket=$ARTIFACTS" -backend-config="key=$PROJECT_NAME-$APPLICATION-$BRANCH/application.tfstate"
-      - terraform init -backend-config="bucket=$ARTIFACTS" -backend-config="key=application.tfstate"
+      - terraform init -backend-config="bucket=$ARTIFACTS"
 
       - echo "apply terraform"
-#      - terraform plan -var "project_name=$PROJECT_NAME" -var "github_repo=$GITHUB_REPO" -var "branch=$BRANCH"  -var "artifacts=$ARTIFACTS"
-#      - terraform apply -auto-approve -var "project_name=$PROJECT_NAME" -var "application=$APPLICATION" -var "github_repo=$GITHUB_REPO" -var "branch=$BRANCH" -var "artifacts=$ARTIFACTS"
       - terraform apply -auto-approve -var "name_prefix=$NAME_PREFIX"
 
       - touch init.tfvars
-      - printf "bucket=\"$ARTIFACTS\"\nkey=\"application.tfstate\"" > init.tfvars
+      - printf "bucket=\"$ARTIFACTS\"" > init.tfvars
       - touch application.tfvars
       - printf "name_prefix=\"$NAME_PREFIX\"" > application.tfvars
 

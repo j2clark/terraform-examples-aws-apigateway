@@ -7,7 +7,6 @@ data "aws_iam_policy_document" "codebuild_policy_document" {
       "iam:PassRole"
     ]
     resources = [
-#      data.aws_iam_role.execution_role.arn
       aws_iam_role.execution_role.arn
     ]
   }

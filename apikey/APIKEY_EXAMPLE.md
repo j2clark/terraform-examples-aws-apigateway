@@ -125,7 +125,7 @@ Lots of information in there, but the key is `User: arn:aws:sts::089600871681:as
 
 Codebuild does not have appropriate Lambda permissions, in this case `lambda:UpdateFunctionCode`
 
-Update `data.aws_iam_policy_document.codebuild_policy_document` in [codebuild_iam_policy.tf](deploy/codebuild_iam_policy.tf) by adding the permissions to the ManageLambdas statement
+Update `data.aws_iam_policy_document.codebuild_policy_document` in [codebuild_iam_policy.tf](deploy/iam_codebuild_policy.tf) by adding the permissions to the ManageLambdas statement
 ```terraform
 statement {
     sid     = "ManageLambdas"
