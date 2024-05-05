@@ -34,7 +34,7 @@ axios.get(url, {
         "Content-type": "application/json"
     }
 }).then(response => {
-    console.log('SUCCESS! ' + response.data.message);
+    console.log('SUCCESS! ' + JSON.stringify(response.data));
 }).catch(err => {
     console.log('ERROR! ' + err);
 
