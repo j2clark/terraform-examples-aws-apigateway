@@ -21,7 +21,7 @@ The _default_ name_prefix for this example is `examples-apigateway-apikey-main`
 
 ## Deploy Resources
 
-S3 Bucket: Used for terraform backend state, and the location of files for [application cleanup](#apikey-example) 
+S3 Bucket: Used for terraform backend state, and the location of files for [application cleanup](#application-cleanup) 
 IAM CodeBuild Role: Roles used to deploy application
 IAM CodeBuild Policy: All IAM policies required to manage application resources 
 IAM Execution Role: Application (Lambda) Role  
@@ -35,6 +35,10 @@ API Gateway Usage Plan
 API Gateway API Key
  
 ## Test the endpoint with the Client
+
+API is the API Gateway ID. It is outputted in the CodeBuild console but also available in the API Gateway Console.
+
+APIKEY is the value of the API_KEY and can be found in the API Gateway Console.
 
 From the [client directory](client), install npm dependencies and run:
 ```shell
