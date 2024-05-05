@@ -1,6 +1,6 @@
 # Terraform Examples: AWS: API Gateway
 
-Fully function examples which demonstrate terraform configurations as well as IAM Policy requirements
+Fully functional examples which demonstrate terraform configurations, describe IAM Policy requirements, and demonstrate access using node client.
 
 ## Each example contains 3 parts
 
