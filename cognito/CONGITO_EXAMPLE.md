@@ -15,7 +15,15 @@ All resource and service names start with the same name prefix: `${project_name}
 
 The _default_ name_prefix for this example is `examples-apigateway-cognito-main`
 
-## Deploy Resources
+## Deploy 
+
+Initialize and Create Deploy resources
+```shell
+terraform init
+terraform apply
+```
+
+#### Resources
 
 S3 Bucket: Used for terraform backend state, and the location of files for [application cleanup](#application-cleanup)
 IAM CodeBuild Role: Roles used to deploy application
@@ -23,7 +31,11 @@ IAM CodeBuild Policy: All IAM policies required to manage application resources
 IAM Execution Role: Application (Lambda) Role  
 CodeBuild Project w/GitHub Webhook: Project to deploy/update application
 
-## Application Resources
+## Application 
+
+Trigger a build using CodeBuild project created by Deploy
+
+#### Resources
 
 Lambda Function
 API Gateway
@@ -31,7 +43,9 @@ API Gateway Authorizer
 Cognito UserPool
 Cognito UserPool User (username: example, password: example)
 
-## Test the endpoint with the Client
+## Client
+
+#### Test the endpoint
 
 API is the API Gateway ID. It is outputted in the CodeBuild console but also available in the API Gateway Console.
 
@@ -46,7 +60,9 @@ npm install
 node cognito_client.js API="${apiId}" ACCOUNT="${accountId}" CLIENT_ID="${appIntegrationClientId}"
 ```
 
-## Application Cleanup
+## Cleanup
+
+#### Application Cleanup
 
 Several artifacts are written to S3 as part of the application deployment.
 
@@ -69,6 +85,13 @@ Destroy the application
 ```shell
 terraform destroy -var-file="application.tfvars"
 ```
+
+#### Deploy Cleanup
+
+```shell
+terraform destroy -var-file="application.tfvars"
+```
+
 
 <!--
 ```shell
