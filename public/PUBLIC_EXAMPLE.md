@@ -1,5 +1,8 @@
-# Public Example
+# API Gateway Example: Simple Public Endpoint
 
+This example creates a very basic API Gateway endpoint open to the world
+
+<!--
 TERRAFORM does not roll back on failures
 
 ## Destroying Application
@@ -11,3 +14,4 @@ TERRAFORM does not roll back on failures
     terraform init -backend-config="init.tfvars" 
     terraform destroy -var-file="application.tfvars"
 ```
+-->

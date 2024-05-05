@@ -1,5 +1,10 @@
-# CORS Example
+# API Gateway Example: Configuring CORS
 
+**_WARNING!_** Creating OPTIONS methods using Terraform is broken.
+
+## TODO: Documentation
+
+<!--
 CORS always trips me up, both coming and going.
 
 Coming - while developing locally it always takes some time to realize where my errors are coming from, and then even more time on how to properly set up my dev environment.
@@ -80,3 +85,4 @@ aws s3 cp s3://terraform-examples-aws-apigateway/terraform-examples-aws-apigatew
 terraform init -backend-config="init.tfvars" 
 terraform destroy -var-file="application.tfvars"
 ```
+-->

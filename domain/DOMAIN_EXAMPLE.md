@@ -1,8 +1,12 @@
-# Domain Example
+# API Gateway Example: Custom Domain Names
 
-This example requires a domain available in AWS Route53
+This example maps an API Gateway deployment stage to a custom domain name.
 
-**_NOTE_** **_README_** The example requires a manual configuration in API Gateway - to Enable CORS on the endpoint. This is due to a bug in terraform when creating OPTIONS methods
+**_WARNING!_** Requires a domain available in AWS Route53
+
+## TODO: Documentation
+<!--
+**_NOTE_** The example requires a manual configuration in API Gateway - to Enable CORS on the endpoint. This is due to a bug in terraform when creating OPTIONS methods
 
 **_Be sure to redeploy_** and wait about 1 minute for changes to propagate
 
@@ -21,3 +25,4 @@ aws s3 cp s3://terraform-examples-aws-apigateway/terraform-examples-aws-apigatew
 terraform init -backend-config="init.tfvars" 
 terraform destroy -var-file="application.tfvars"
 ```
+-->

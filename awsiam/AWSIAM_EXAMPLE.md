@@ -1,5 +1,10 @@
-# AWS_IAM Example
+# API Gateway Example: AWS_IAM Authentication
 
+This example creates an API Gateway endpoint which uses AWS_IAM for access
+
+## TODO: Documentation 
+
+<!--
 Todo: Use local identity pool to expose Authentication Role permissions 
 
 TERRAFORM does not roll back on failures
@@ -12,3 +17,4 @@ TERRAFORM does not roll back on failures
     terraform init -backend-config="init.tfvars" 
     terraform destroy -var-file="application.tfvars"
 ```
+-->

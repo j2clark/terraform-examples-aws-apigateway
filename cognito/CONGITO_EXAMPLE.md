@@ -1,6 +1,10 @@
-# Cognito UserPool Example
+# API Gateway Example: Cognito Authentication
 
+This example creates an API Gateway endpoint which uses Cognito for authentication
 
+## TODO: Documentation
+
+<!--
 ```shell
     cd code/terraform
     aws s3 cp s3://terraform-examples-aws-apigateway/terraform-examples-aws-apigateway-cognito-main/init.tfvars init.tfvars
@@ -29,3 +33,4 @@ curl -X POST -H "Authorization: Basic base64(example:example)" -H "Content-Type:
 
 curl -X POST "https://terraform-examples.auth.us-west-1.amazoncognito.com/oauth2/token?grant_type=client_credentials" -H "Authorization: Basic ZXhhbXBsZTpleGFtcGxl"
 ```
+-->
