@@ -7,9 +7,9 @@ Fully functional examples which demonstrate terraform configurations, describe I
 Each application is designed to be a stand-alone application, namespaced such that all examples can be deployed simultaneously, as well as several version of a single example.  
 
 Each example consists of the following, to be exercised in order:
-- [deploy](#deploy), 
-- [application](#application), 
-- [client](#client) directory, to be run in that order
+- [deploy](#deploy) 
+- [application](#application) 
+- [client](#client)
 
 Instructions on cleaning up are described in each example.
 
