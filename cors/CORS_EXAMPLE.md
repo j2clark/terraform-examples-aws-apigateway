@@ -1,5 +1,7 @@
 # API Gateway Example: Configuring CORS
 
+This example demonstrates configuring CORS for a resource and 4XX/5XX responses
+
 **_WARNING!_** Creating OPTIONS methods using Terraform is broken.
 
 ## TODO: Documentation

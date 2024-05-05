@@ -35,9 +35,9 @@ These clients rely on @aws-sdk V3 where applicable, and show how to pass appropr
 
 ## The Examples
 
-* [Public](public/PUBLIC_EXAMPLE.md)
-* [API Key](apikey/APIKEY_EXAMPLE.md)
-* [CORS](cors/CORS_EXAMPLE.md)
-* [Cognito](cognito/CONGITO_EXAMPLE.md)
-* [AWS_IAM](awsiam/AWSIAM_EXAMPLE.md)
-* [Domain](domain/DOMAIN_EXAMPLE.md)
+* [Public](public/PUBLIC_EXAMPLE.md): An API Gateway endpoint, open to the world
+* [API Key](apikey/APIKEY_EXAMPLE.md): An API Gateway endpoint which requires an API Key for access
+* [CORS](cors/CORS_EXAMPLE.md): An example on configuring CORS for OPTIONS and GET methods and all 4XX/5XX responses
+* [Cognito](cognito/CONGITO_EXAMPLE.md): An API Gateway endpoint which uses Cognito for authentication
+* [AWS_IAM](awsiam/AWSIAM_EXAMPLE.md): An API Gateway endpoint which uses AWS_IAM for access
+* [Domain](domain/DOMAIN_EXAMPLE.md): An API Gateway mapping a `deployment stage` to a `custom domain name`.
