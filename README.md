@@ -12,4 +12,5 @@ Each example consists of a deploy, application, and client directory.
 * [Public](public/PUBLIC_EXAMPLE.md)
 * [API Key](apikey/APIKEY_EXAMPLE.md)
 * [CORS](cors/CORS_EXAMPLE.md)
+* [Cognito](cognito/CONGITO_EXAMPLE.md)
 * [AWS_IAM](awsiam/AWSIAM_EXAMPLE.md)
