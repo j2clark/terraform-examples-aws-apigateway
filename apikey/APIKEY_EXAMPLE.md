@@ -28,21 +28,21 @@ terraform apply
 ```
 
 #### Resources
-S3 Bucket: Used for terraform backend state, and the location of files for [application cleanup](#application-cleanup) 
-IAM CodeBuild Role: Roles used to deploy application
-IAM CodeBuild Policy: All IAM policies required to manage application resources 
-IAM Execution Role: Application (Lambda) Role  
-CodeBuild Project w/GitHub Webhook: Project to deploy/update application
+* S3 Bucket: Used for terraform backend state, and the location of files for [application cleanup](#application-cleanup) 
+* IAM CodeBuild Role: Roles used to deploy application
+* IAM CodeBuild Policy: All IAM policies required to manage application resources 
+* IAM Execution Role: Application (Lambda) Role  
+* CodeBuild Project w/GitHub Webhook: Project to deploy/update application
 
 ## Application
 
 Trigger a build using CodeBuild project created by Deploy
 
 #### Resources
-Lambda Function
-API Gateway
-API Gateway Usage Plan
-API Gateway API Key
+* Lambda Function
+* API Gateway
+* API Gateway Usage Plan
+* API Gateway API Key
  
 ## Client
 
