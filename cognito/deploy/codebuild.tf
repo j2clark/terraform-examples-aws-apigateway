@@ -6,7 +6,7 @@ resource "aws_codebuild_project" "codebuild_backend" {
     type            = "GITHUB"
     location        = "https://github.com/${var.repo}"
     git_clone_depth = 1
-    buildspec       = "cognito/deploy/buildspec.yml"
+    buildspec       = "cognito/application/buildspec.yml"
   }
 
   source_version = var.branch
