@@ -4,7 +4,7 @@ variable "name_prefix" {
 
 variable "cors_origin" {
   type = string
-  default = "*"
+  default = "'*'"
 }
 
 locals {
