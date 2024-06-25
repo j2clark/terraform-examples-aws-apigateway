@@ -19,6 +19,13 @@ resource "aws_api_gateway_gateway_response" "cors_4xx" {
     "gatewayresponse.header.Access-Control-Allow-Origin" = local.cors_origin
     "gatewayresponse.header.Access-Control-Allow-Credentials" = "'true'"
   }
+  response_templates = {
+    "application/json" = <<JSON
+{
+    "message": $context.error.messageString
+}
+JSON
+  }
 }
 
 resource "aws_api_gateway_gateway_response" "cors_5xx" {
@@ -29,5 +36,12 @@ resource "aws_api_gateway_gateway_response" "cors_5xx" {
     "gatewayresponse.header.Access-Control-Allow-Methods" = "'GET,OPTIONS,POST,PUT'",
     "gatewayresponse.header.Access-Control-Allow-Origin" = local.cors_origin
     "gatewayresponse.header.Access-Control-Allow-Credentials" = "'true'"
+  }
+  response_templates = {
+    "application/json" = <<JSON
+{
+    "message": $context.error.messageString
+}
+JSON
   }
 }

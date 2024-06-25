@@ -87,8 +87,8 @@ The S3 Bucket name pattern `${project_name}-${branch}-${accountid}` is the name 
 
 From [application directory](application), download the tfvars files:
 ```shell
-aws s3 cp s3://examples-apigateway-awsiam-main-0123456789/init.tfvars init.tfvars
-aws s3 cp s3://examples-apigateway-awsiam-main-0123456789/application.tfvars application.tfvars
+aws s3 cp s3://examples-apigateway-awsiam-main-089600871681/init.tfvars init.tfvars
+aws s3 cp s3://examples-apigateway-awsiam-main-089600871681/application.tfvars application.tfvars
 ```
 
 Initialize the local terraform state

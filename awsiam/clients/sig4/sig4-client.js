@@ -1,5 +1,5 @@
 /*
-usage: node ./sig4-client.js API_ID=racgz904ce USERPOOL_ID=us-west-1_UQmv4xJHM USERPOOL_WEB_CLIENT_ID=4aqm86e0kh41jmvr956lreicqt IDENTITYPOOL_ID=us-west-1:91027471-daeb-49ea-b2a0-8805e89eb201
+usage: node ./sig4-client.js API_ID=5tlc9lgnxk USERPOOL_ID=us-west-1_13hh7PE0O USERPOOL_WEB_CLIENT_ID=p4fb33a4rhpj5kjp708pkup6h IDENTITYPOOL_ID=us-west-1:39693ee6-a0ee-4d0d-9041-0866003d66b5
  */
 
 import { CognitoIdentityProviderClient, InitiateAuthCommand } from "@aws-sdk/client-cognito-identity-provider";
