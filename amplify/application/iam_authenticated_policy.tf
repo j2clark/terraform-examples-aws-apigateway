@@ -6,8 +6,7 @@ data "aws_iam_policy_document" "authenticated_role_policy" {
       "execute-api:Invoke",
     ]
     resources = [
-#      "arn:aws:execute-api:${local.region}:${local.account_id}:${aws_api_gateway_rest_api.restapi.id}/${aws_api_gateway_stage.v1.stage_name}/GET${aws_api_gateway_resource.hello.path}"
-      "arn:aws:execute-api:${local.region}:${local.account_id}:${aws_api_gateway_rest_api.restapi.id}/${aws_api_gateway_stage.v1.stage_name}/POST${aws_api_gateway_resource.hello.path}"
+      "arn:aws:execute-api:${local.region}:${local.account_id}:${aws_api_gateway_rest_api.restapi.id}/${aws_api_gateway_stage.v1.stage_name}/GET${aws_api_gateway_resource.hello.path}"
     ]
   }
 }
