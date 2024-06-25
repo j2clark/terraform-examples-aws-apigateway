@@ -10,8 +10,12 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@aws-crypto/sha256-browser": "^5.2.0",
     "@aws-sdk/client-cognito-identity": "^3.600.0",
     "@aws-sdk/client-cognito-identity-provider": "^3.600.0",
+    "@aws-sdk/credential-provider-node": "^3.600.0",
+    "@aws-sdk/protocol-http": "^3.374.0",
+    "@aws-sdk/signature-v4": "^3.374.0",
     "aws4": "^1.13.0",
     "axios": "^1.6.8"
   }
