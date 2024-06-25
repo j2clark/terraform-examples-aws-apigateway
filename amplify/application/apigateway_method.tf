@@ -5,9 +5,7 @@ resource "aws_api_gateway_resource" "hello" {
 }
 
 resource "aws_api_gateway_method" "hello_GET" {
-  depends_on = [
-    aws_lambda_function.hello_GET
-  ]
+  depends_on = [aws_lambda_function.hello_GET]
   rest_api_id = aws_api_gateway_rest_api.restapi.id
   resource_id = aws_api_gateway_resource.hello.id
   http_method = "GET"
@@ -32,6 +30,7 @@ resource "aws_api_gateway_method_response" "hello_GET" {
 }
 
 resource "aws_api_gateway_integration_response" "hello_GET" {
+  depends_on = [aws_api_gateway_integration.hello_GET]
   rest_api_id = aws_api_gateway_rest_api.restapi.id
   resource_id = aws_api_gateway_resource.hello.id
   http_method = aws_api_gateway_method.hello_GET.http_method
@@ -52,54 +51,54 @@ resource "aws_lambda_permission" "hello_lambda_permission" {
 
 
 
-resource "aws_api_gateway_method" "hello_OPTIONS" {
-  rest_api_id   = aws_api_gateway_rest_api.restapi.id
-  resource_id   = aws_api_gateway_resource.hello.id
-  http_method   = "OPTIONS"
-  authorization = "NONE"
-}
-
-resource "aws_api_gateway_integration" "hello_OPTIONS" {
-  depends_on = [aws_api_gateway_method.hello_OPTIONS]
-  rest_api_id   = aws_api_gateway_rest_api.restapi.id
-  resource_id   = aws_api_gateway_resource.hello.id
-  http_method   = aws_api_gateway_method.hello_OPTIONS.http_method
-  type          = "MOCK"
-  request_templates = {
-    "application/json" = <<JSON
-{
-    "statusCode": 200
-}
-JSON
-  }
-}
-
-resource "aws_api_gateway_method_response" "hello_OPTIONS" {
-  rest_api_id   = aws_api_gateway_rest_api.restapi.id
-  resource_id   = aws_api_gateway_resource.hello.id
-  http_method   = aws_api_gateway_method.hello_OPTIONS.http_method
-  status_code   = "200"
-  response_parameters = {
-    "method.response.header.Access-Control-Allow-Headers" = true,
-    "method.response.header.Access-Control-Allow-Methods" = true,
-    "method.response.header.Access-Control-Allow-Origin" = true,
-    "method.response.header.Access-Control-Allow-Credentials" = true
-  }
-  response_models = {
-    "application/json" = "Empty"
-  }
-}
-
-resource "aws_api_gateway_integration_response" "hello_OPTIONS" {
-  depends_on = [aws_api_gateway_integration.hello_OPTIONS]
-  rest_api_id   = aws_api_gateway_rest_api.restapi.id
-  resource_id   = aws_api_gateway_resource.hello.id
-  http_method   = aws_api_gateway_method.hello_OPTIONS.http_method
-  status_code = "200"
-  response_parameters = {
-    "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
-    "method.response.header.Access-Control-Allow-Methods" = "'GET,OPTIONS'",
-    "method.response.header.Access-Control-Allow-Origin" = var.cors_origin
-    "method.response.header.Access-Control-Allow-Credentials" = "'true'"
-  }
-}
+#resource "aws_api_gateway_method" "hello_OPTIONS" {
+#  rest_api_id   = aws_api_gateway_rest_api.restapi.id
+#  resource_id   = aws_api_gateway_resource.hello.id
+#  http_method   = "OPTIONS"
+#  authorization = "NONE"
+#}
+#
+#resource "aws_api_gateway_integration" "hello_OPTIONS" {
+#  depends_on = [aws_api_gateway_method.hello_OPTIONS]
+#  rest_api_id   = aws_api_gateway_rest_api.restapi.id
+#  resource_id   = aws_api_gateway_resource.hello.id
+#  http_method   = aws_api_gateway_method.hello_OPTIONS.http_method
+#  type          = "MOCK"
+#  request_templates = {
+#    "application/json" = <<JSON
+#{
+#    "statusCode": 200
+#}
+#JSON
+#  }
+#}
+#
+#resource "aws_api_gateway_method_response" "hello_OPTIONS" {
+#  rest_api_id   = aws_api_gateway_rest_api.restapi.id
+#  resource_id   = aws_api_gateway_resource.hello.id
+#  http_method   = aws_api_gateway_method.hello_OPTIONS.http_method
+#  status_code   = "200"
+#  response_parameters = {
+#    "method.response.header.Access-Control-Allow-Headers" = true,
+#    "method.response.header.Access-Control-Allow-Methods" = true,
+#    "method.response.header.Access-Control-Allow-Origin" = true,
+#    "method.response.header.Access-Control-Allow-Credentials" = true
+#  }
+#  response_models = {
+#    "application/json" = "Empty"
+#  }
+#}
+#
+#resource "aws_api_gateway_integration_response" "hello_OPTIONS" {
+#  depends_on = [aws_api_gateway_integration.hello_OPTIONS]
+#  rest_api_id   = aws_api_gateway_rest_api.restapi.id
+#  resource_id   = aws_api_gateway_resource.hello.id
+#  http_method   = aws_api_gateway_method.hello_OPTIONS.http_method
+#  status_code = "200"
+#  response_parameters = {
+#    "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+#    "method.response.header.Access-Control-Allow-Methods" = "'GET,OPTIONS'",
+#    "method.response.header.Access-Control-Allow-Origin" = var.cors_origin
+#    "method.response.header.Access-Control-Allow-Credentials" = "'true'"
+#  }
+#}

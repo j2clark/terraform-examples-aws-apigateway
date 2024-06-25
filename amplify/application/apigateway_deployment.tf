@@ -1,6 +1,6 @@
 resource "aws_api_gateway_deployment" "deployment" {
   depends_on = [
-    aws_api_gateway_method.hello_OPTIONS,
+#    aws_api_gateway_method.hello_OPTIONS,
     aws_api_gateway_method.hello_GET,
   ]
   rest_api_id = aws_api_gateway_rest_api.restapi.id
@@ -10,7 +10,7 @@ resource "aws_api_gateway_deployment" "deployment" {
     # redeployment not working if I change method api_key_required value
     # manual redeploy, from console, takes several seconds
     redeployment = sha1(jsonencode([
-      aws_api_gateway_method.hello_OPTIONS,
+#      aws_api_gateway_method.hello_OPTIONS,
       aws_api_gateway_method.hello_GET,
     ]))
   }
