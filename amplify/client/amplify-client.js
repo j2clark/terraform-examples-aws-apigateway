@@ -4,14 +4,14 @@ import aws4 from "aws4";
 
 const awsExports = {
     apiRegion: 'us-west-1',
-    apiHost: 'racgz904ce',
+    apiHost: 'stjwklei5i',
 
     userPoolRegion: 'us-west-1',
-    userPoolId: "us-west-1_UQmv4xJHM",
-    userPoolWebClientId: "4aqm86e0kh41jmvr956lreicqt",
+    userPoolId: "us-west-1_bGvOUxYuS",
+    userPoolWebClientId: "arar458b04nldcsl3v9tbrnas",
 
     identityPoolRegion: 'us-west-1',
-    identityPoolId: "us-west-1:91027471-daeb-49ea-b2a0-8805e89eb201"
+    identityPoolId: "us-west-1:0bb3ac92-c7da-46b3-b053-8388d10a11fb"
 }
 
 // https://docs.amplify.aws/gen1/javascript/prev/build-a-backend/auth/set-up-auth/
@@ -83,7 +83,6 @@ signIn(username, password).then(() => {
             secretAccessKey: credentials.secretAccessKey,
             sessionToken: credentials.sessionToken
         });
-
         delete signedRequest.headers.Host;
 
         console.log('aws4 headers: ' + JSON.stringify(signedRequest.headers))
