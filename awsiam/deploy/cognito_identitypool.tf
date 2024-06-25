@@ -1,7 +1,7 @@
 # https://stackoverflow.com/questions/48451755/terraform-definition-of-cognito-identity-pool-auth-unauth-roles
 
 resource "aws_cognito_identity_pool" "identity_pool" {
-  identity_pool_name = "${var.name_prefix}-idpool"
+  identity_pool_name = "${local.name_prefix}-idpool"
 
   allow_unauthenticated_identities = false
 

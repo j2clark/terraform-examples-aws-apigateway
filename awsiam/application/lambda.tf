@@ -1,16 +1,16 @@
-data "archive_file" "lambda_basic_package" {
+data "archive_file" "hello_GET" {
   type = "zip"
-  source_file = "lambda/get.js"
-  output_path = "get.zip"
+  source_file = "lambda/hello_GET.js"
+  output_path = "hello_GET.zip"
 }
 
-resource "aws_lambda_function" "lambda_get" {
+resource "aws_lambda_function" "hello_GET" {
   function_name = "${var.name_prefix}-hello"
-  filename = "get.zip"
+  filename = "hello_GET.zip"
   role = data.aws_iam_role.execution_role.arn
-  handler = "get.handler"
+  handler = "hello_GET.handler"
   runtime = "nodejs18.x"
-  source_code_hash = data.archive_file.lambda_basic_package.output_base64sha256
+  source_code_hash = data.archive_file.hello_GET.output_base64sha256
 
   tags = local.common_tags
 }

@@ -1,6 +1,6 @@
 #we deploy as part
 resource "aws_cognito_user_pool" "userpool" {
-  name = "${var.name_prefix}-userpool"
+  name = "${local.name_prefix}-userpool"
   mfa_configuration = "OFF"
   password_policy {
     minimum_length = 6

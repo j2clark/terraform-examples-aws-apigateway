@@ -24,6 +24,6 @@ data "aws_iam_policy_document" "authenticated" {
 }
 
 resource "aws_iam_role" "authenticated" {
-  name               = "${var.name_prefix}-authenticated"
+  name               = "${local.name_prefix}-authenticated"
   assume_role_policy = data.aws_iam_policy_document.authenticated.json
 }

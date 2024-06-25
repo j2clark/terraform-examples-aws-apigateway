@@ -1,2 +1,7 @@
-/amplify/deploy/.terraform.lock.hcl
-/amplify/deploy/terraform.tfstate
+/**/.terraform.lock.hcl
+/**/terraform.tfstate
+/**/terraform.tfstate.backup
+/**/.terraform/
+/**/application.tfvars
+/**/init.tfvars
+/**/*.zip

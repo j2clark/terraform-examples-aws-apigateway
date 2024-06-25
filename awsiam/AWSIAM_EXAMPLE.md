@@ -47,7 +47,14 @@ Trigger a build using CodeBuild project created by Deploy
 * Cognito UserPool
 * Cognito UserPool User (username: example, password: example)
 
-## Client
+## Clients
+
+[There are several different clients to choose from.](clients/CLIENTS.md)
+
+Amplify is used to simplify communication with Cognito Userpool and IdentityPool.
+The amplify client signs requests using aws4.
+
+There are 2 solutions for signing requests: aws4 (preferred) and Signature4
 
 #### Test the endpoint
 
