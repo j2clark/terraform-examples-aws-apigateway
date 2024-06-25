@@ -1,3 +1,7 @@
+/*
+usage: node ./cors_client.js API_ID=fc1dnxkb81
+ */
+
 const axios = require('axios');
 
 const config = {
@@ -11,7 +15,7 @@ args.forEach((val) => {
     const key = val.split("=")[0]
     console.log()
     switch (key) {
-        case 'API':
+        case 'API_ID':
             config['apiId'] = val.split("=")[1];
             break
         case 'ENDPOINT':
@@ -24,7 +28,7 @@ args.forEach((val) => {
 })
 
 if (!config['apiId']) {
-    throw new Error('API parameter required')
+    throw new Error('API_ID parameter required')
 }
 
 const url = 'https://' + config.apiId + '.execute-api.' + config.region + '.amazonaws.com' + config.endpoint;
