@@ -5,7 +5,7 @@ output "REGION" {
 output "USER_POOL_ID" {
   value = aws_cognito_user_pool.userpool.id
 }
-output "APP_CLIENT_ID" {
+output "USER_POOL_WEB_CLIENT_ID" {
   value = aws_cognito_user_pool_client.userpool_client.id
 }
 
