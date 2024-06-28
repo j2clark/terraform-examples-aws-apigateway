@@ -1,8 +1,9 @@
 resource "aws_api_gateway_deployment" "deployment" {
   depends_on = [
     aws_api_gateway_method.hello_OPTIONS,
-    aws_api_gateway_integration.hello_OPTIONS,
     aws_api_gateway_method.hello_GET,
+
+    aws_api_gateway_integration.hello_OPTIONS,
     aws_api_gateway_integration.hello_GET,
 
     aws_api_gateway_gateway_response.cors_4xx,
@@ -17,6 +18,12 @@ resource "aws_api_gateway_deployment" "deployment" {
     redeployment = sha1(jsonencode([
       aws_api_gateway_method.hello_OPTIONS,
       aws_api_gateway_method.hello_GET,
+
+      aws_api_gateway_integration.hello_OPTIONS,
+      aws_api_gateway_integration.hello_GET,
+
+      aws_api_gateway_gateway_response.cors_4xx,
+      aws_api_gateway_gateway_response.cors_5xx,
     ]))
   }
 

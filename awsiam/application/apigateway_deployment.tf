@@ -11,6 +11,7 @@ resource "aws_api_gateway_deployment" "deployment" {
     # manual redeploy, from console, takes several seconds
     redeployment = sha1(jsonencode([
       aws_api_gateway_method.hello_GET,
+      aws_api_gateway_integration.hello_GET
     ]))
   }
 
